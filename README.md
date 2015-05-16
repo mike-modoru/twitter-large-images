@@ -1,14 +1,14 @@
 ## twitter-large-images
-Chrome extension to show large versions of images on Twitter timelines.
+Chrome extension to use large versions of images in Twitter timelines.
 
 #### Twitter Timeline Images
 Twitter stores images in two sizes:
 - Normal size: up to 600x1200 in size
 - Large size: up to 1024x2048 in size
 
-If someone uploads a larger image it is shrunk to fit. And when you view or save an image,
-Twitter often uses the smaller size. So for people who want to see the higher quality
-images this Chrome extension redirects all image requests to the large version.
+If someone uploads a larger image it is shrunk to fit these sizes. When you view or save
+an image, Twitter will often use the smaller size. So for people who want to download or 
+view the larger images this Chrome extension uses the large version always.
 
 #### Usage
 The extension runs automatically. You can toggle it on and off by clicking its icon at the
