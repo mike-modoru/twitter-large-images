@@ -4,10 +4,10 @@
 
 #### Twitter Timeline Images
 Twitter stores images at two sizes:
-* Normal size: up to 600x1200 in size
-* Large size: up to 1024x2048 in size
+- Normal size: up to 600x1200 pixels
+- Large size: up to 1024x2048 pixels
 
-Large images are scaled down to fit.
+User images are scaled down to fit these sizes.
 
 When you save an image from Twitter, sometimes you get the normal size even if Twitter has
 a larger version. This can happen on your home timeline, on lists and on tweets with
