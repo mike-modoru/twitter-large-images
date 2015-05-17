@@ -18,6 +18,7 @@
   
   // Status of the extension itself (toggled via browser action icon)
   var active = Status.Active;
+  var firstRun = false;
 
   // Redirect twitter image requests to the large version of the image
   function redirectRequest(request) {
@@ -48,11 +49,19 @@
 
   // Toggle extension status on browser action icon click
   function toggleBrowserAction(tab) {
-    active = (active === Status.Active ? Status.Inactive : Status.Active);
-    if (tabStatus[tab.id] === Status.Active || tabStatus[tab.id] === Status.Inactive) {
-      chrome.tabs.reload(tab.id, {bypassCache: true}); // Refresh current tab if it had redirects
+    if (firstRun) {
+      // Message shown on first click
+      alert(chrome.i18n.getMessage("first_run"));
+      firstRun = false;
     }
-    updateActiveStatus();
+    else
+    {
+      active = (active === Status.Active ? Status.Inactive : Status.Active);
+      if (tabStatus[tab.id] === Status.Active || tabStatus[tab.id] === Status.Inactive) {
+        chrome.tabs.reload(tab.id, {bypassCache: true}); // Refresh current tab if it had redirects
+      }
+      updateActiveStatus();
+    }
   }
 
   // Navigating to new page, update tab status
@@ -90,8 +99,12 @@
   // Extension start-up
   chrome.browserAction.disable();
   chrome.storage.local.get("active", function(storage) {
-    // Read stored activation status, if nothing stored default to active (e.g. first run)
-    active = (storage.active === undefined ? Status.Active : storage.active); 
+    // Read stored activation status, if nothing stored then this is first run so activate and prepare message
+    active = storage.active; 
+    if (active === undefined) {
+      active = Status.Active;
+      firstRun = true;
+    }
     updateActiveStatus();
     
     // Set listeners

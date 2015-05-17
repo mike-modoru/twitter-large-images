@@ -4,5 +4,8 @@
   },
   "extension_description": {
     "message": "Gets the large versions of images posted on Twitter."
+  },
+  "first_run": {
+    "message": "Twitter Large Images is now active. Press the icon again to toggle on and off. This message will not be shown again."
   }
 }

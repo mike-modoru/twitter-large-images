@@ -14,8 +14,8 @@ multiple images. This extension makes sure you always get the largest available 
 of images.
 
 Note: this extension does not scale the images, but gets larger originals if they exist.
-It will do nothing in cases where Twitter already gives your the larger size (usually when
-you read someone else's account). 
+It will do nothing if Twitter is already giving you the larger size (usually when you read
+someone else's account). Remember to zoom in on large images to see their full size.
 
 #### Usage
 The extension runs automatically. You can toggle it on and off by clicking its icon at the
