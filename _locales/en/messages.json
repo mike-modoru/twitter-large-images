@@ -3,6 +3,6 @@
     "message": "Twitter Large Images"
   },
   "extension_description": {
-    "message": "Extension for Twitter. On timelines uses large versions of images when using 'Save as', 'Open image in new tab', drag-and-drop etc."
+    "message": "Gets the large versions of images posted on Twitter."
   }
 }
