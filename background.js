@@ -27,7 +27,7 @@
     if (active === Status.Active) {    // Only redirect if extension active
       suffix = request.url.substr(request.url.length - 6).toUpperCase();
       if (suffix !== ":LARGE" && suffix !== ":THUMB") { // Skip thumbnails & already large images
-        return {redirectUrl : request.url + ":large"};
+        return {redirectUrl : request.url + ":orig"};
       }
     }
     return {};
