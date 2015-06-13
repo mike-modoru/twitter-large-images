@@ -3,20 +3,14 @@
 
 
 #### Twitter Timeline Images
-Twitter stores images at two sizes:
-- Normal size: up to 600x1200 pixels
-- Large size: up to 1024x2048 pixels
-
-User images are scaled down to fit these sizes.
-
-When you save an image from Twitter, sometimes you get the normal size even if Twitter has
-a larger version. This can happen on your home timeline, on lists and on tweets with
-multiple images. This extension makes sure you always get the largest available versions
-of images.
+Twitter stores images at different sizes. The "normal" size is up to 600x1200 pixels and
+when you save an image from Twitter, you will often get this normal size even if Twitter
+has a larger version. This can happen on your home timeline, on lists and on tweets with
+multiple images. This extension makes sure you always get the largest available version.
 
 Note: this extension does not scale the images, but gets larger originals if they exist.
-It will do nothing if Twitter is already giving you the larger size (usually when you read
-someone else's account). Remember to zoom in on large images to see their full size.
+It does nothing if Twitter is already giving you the largest available size (usually when
+you read someone else's account). Remember to zoom in on large images to see the full size.
 
 #### Usage
 The extension runs automatically. You can toggle it on and off by clicking its icon at the
@@ -27,8 +21,8 @@ There are two ways to see the larger images:
 * Right-click the image and select one of the "image" options, such as "Save image as..."
 
 A problem with the second option is that Twitter changes the filenames of large images to
-something like *Image.jpg:large*. This means that files are often saved with a
-*.jpg-large* extension and you must rename to *.jpg*. Unfortunately this is difficult
+something like *Image.jpg:orig*. This means that files are often saved with a
+*.jpg-orig* extension and you must rename to *.jpg*. Unfortunately this is difficult
 to fix in an extension.
 However, this problem does not affect drag-and-drop, nor the "Copy image" right-click menu
 option, so use those methods.

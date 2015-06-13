@@ -1,5 +1,5 @@
 // Chrome extension - Twitter Large Image Redirector
-// Redirects all images on to twitter timelines to their large versions
+// Redirects all images on to twitter timelines to their original large versions
 // Background page for browser action
 (function() {
   "use strict";
@@ -25,8 +25,8 @@
     var suffix;
     tabStatus[request.tabId] = active; // Found a url match, set tab status to extension status
     if (active === Status.Active) {    // Only redirect if extension active
-      suffix = request.url.substr(request.url.length - 6).toUpperCase();
-      if (suffix !== ":LARGE" && suffix !== ":THUMB") { // Skip thumbnails & already large images
+      suffix = request.url.substr(request.url.length - 5).toUpperCase();
+      if (suffix !== ":ORIG" && suffix !== "THUMB") { // Skip thumbnails & already original size images
         return {redirectUrl : request.url + ":orig"};
       }
     }
