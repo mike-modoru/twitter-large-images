@@ -26,11 +26,11 @@
     tabStatus[request.tabId] = active; // Found a url match, set tab status to extension status
     if (active === Status.Active) {    // Only redirect if extension active
       suffix = request.url.substr(request.url.length - 5).toUpperCase();
-      if (suffix !== ":ORIG" && suffix !== "THUMB") { // Skip thumbnails & already original size images
+      if (suffix !== "=ORIG" && suffix !== "THUMB") { // Skip thumbnails & already original size images
         if (suffix === "LARGE") { // Rewrite large as orig
-          return {redirectUrl : request.url.substr(0, request.url.length - 6) + ":orig"};
+          return {redirectUrl : request.url.substr(0, request.url.length - 6) + "=orig"};
         } else {
-          return {redirectUrl : request.url + ":orig"};
+          return {redirectUrl : request.url + "=orig"};
         }
       }
     }
